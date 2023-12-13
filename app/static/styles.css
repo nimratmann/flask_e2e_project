@@ -1,0 +1,148 @@
+/* WebServiceCSS */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #257932; /* Green Color */
+    text-align: center;
+    padding: 25px;
+    background-color: #f2f2f2; /* Light Gray Background */
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: #257932; /* Green Color */
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 15px 50px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #199e5c; /* Darker Green Color on Hover */
+    color: #fff;
+}
+
+section {
+    margin: 20px;
+    padding: 60px;
+    background-color: #fff;
+    font-size: 20px;
+}
+
+/* ContactPage */
+
+body#ContactPage {
+    background-color: #171717;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    background-color: #4caf50; /* Green Color */
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* ThankYouSubmission */
+
+body#ThankYouSubmission {
+    background-color: #f8f8f8;
+}
+
+h2,
+p {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for index and dashboard */
+
+.title-cell {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.login-btn {
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    padding: 10px;
+    box-shadow: 3px 3px 3px #aaa; /* Light Gray Shadow */
+    border-radius: 15px;
+}
+
+.btn-text {
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #555; /* Dark Gray Text Color */
+}
+

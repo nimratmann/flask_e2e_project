@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Data Entry</h1>
+    <form action="{{ url_for('submit_data') }}" method="post">
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required>
+
+        <label for="blood_pressure">Blood Pressure:</label>
+        <input type="text" id="blood_pressure" name="blood_pressure" required>
+
+        <!-- Add other fields as needed -->
+
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Recent Entries</h2>
+    <ul>
+        <li>Weight: 145 lbs</li>
+        <li>Blood Pressure: 130/85 mmHg</li>
+        <!-- Add more entries as needed -->
+    </ul>
+{% endblock %}
