@@ -1,0 +1,112 @@
+{% extends "index.html" %} {% block title %} Prescription {% endblock %} {%
+    block navbar %}
+    
+    <div class="bg-gray-800 w-full">
+      <div
+        class="container mx-auto flex w-full flex-row items-center justify-between"
+      >
+        <h3 class="text-3xl text-italic font-bold text-blue-500 px-5">MEDIC</h3>
+        <nav class="flex w-[50%] items-center justify-between py-8"></nav>
+        <div class="flex flex-row items-center justify-center gap-4">
+          <a
+            href="{{ url_for('logout') }}"
+            class="bg-red-500 text-white border border-red-600 rounded-md px-4 py-2 inline-block transition duration-300 ease-in-out hover:bg-red-600 hover:border-red-700 focus:outline-none focus:ring focus:border-red-700"
+          >
+            Log Out
+          </a>
+          <img
+            src="{{profile_pic}}"
+            alt="profilepic"
+            class="rounded-full"
+            width="20"
+            height="20"
+          />
+          <p class="text-white">{{name}}</p>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %} {% block content %}
+    <body class="font-sans bg-gray-100 p-8">
+      <div class="container mx-auto">
+        <h1 class="text-center text-3xl font-bold mb-8">Add New Medicine</h1>
+    
+        <form
+          method="POST"
+          class="max-w-4xl mx-auto bg-white p-8 rounded shadow-md"
+        >
+          <div class="mb-4">
+            <label
+              for="medicineName"
+              class="text-sm font-medium text-gray-700 block"
+              >Medicine Name</label
+            >
+            <input
+              required
+              type="text"
+              id="medicineName"
+              name="medicineName"
+              value="{{ prescription.medicine_name }}"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+    
+          <div class="mb-4">
+            <label
+              for="instructions"
+              class="text-sm font-medium text-gray-700 block"
+              >Instructions</label
+            >
+            <textarea
+              required
+              id="instructions"
+              name="instructions"
+              rows="3"
+              class="mt-1 p-2 w-full border rounded-md"
+            >
+    {{ prescription.instructions }}</textarea
+            >
+          </div>
+    
+          <div class="mb-4">
+            <label for="dosage" class="text-sm font-medium text-gray-700 block"
+              >Dosage</label
+            >
+            <input
+              required
+              type="text"
+              id="dosage"
+              name="dosage"
+              value="{{ prescription.dosage }}"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+    
+          <div class="mb-4">
+            <label for="dosage" class="text-sm font-medium text-gray-700 block"
+              >Doctor</label
+            >
+            <input
+              required
+              type="text"
+              id="doctor"
+              name="doctor"
+              value="{{ prescription.doctor }}"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+          {% block addbutton %}
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              name="updatePrescription"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            >
+              Update Prescription
+            </button>
+          </div>
+          {% endblock %}
+        </form>
+      </div>
+    </body>
+    {% endblock %}

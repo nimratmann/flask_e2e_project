@@ -1,0 +1,6 @@
+# This was fake data used to test the prescription table
+prescriptions = [
+    {"medicine_name": "Medicine A", "instructions": "Take with water", "dosage": "2 pills daily", "doctor": "Dr. Smith", "id": 1},
+    {"medicine_name": "Medicine B", "instructions": "Take after meals", "dosage": "1 pill daily", "doctor": "Dr. Johnson", "id": 2},
+    {"medicine_name": "Medicine C", "instructions": "Take before bedtime", "dosage": "3 pills daily", "doctor": "Dr. Davis", "id": 3},
+]

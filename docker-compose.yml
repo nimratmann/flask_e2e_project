@@ -1,0 +1,29 @@
+version: '3'
+services:
+  flask-app:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - mysql-db
+    environment:
+      db_uri: "mysql+pymysql://${DB_USERNAME}:${DB_PASSWORD}@${DOCKER_DB_HOST}/${DB_NAME}?ssl_ca=/etc/mysql-ssl/ca-cert.pem"
+    volumes:
+      - ./app:/app  # Assuming your Python file is in the ./app directory
+      - ./app/DigiCertGlobalRootCA.crt.pem:/etc/mysql-ssl/ca-cert.pem  # Mount the pem file
+
+  mysql-db:
+    image: mysql:8.0 
+    container_name: flask-backend-db
+    environment:
+      MYSQL_HOST: ${DB_HOST}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_PORT: 3306
+    volumes:
+      - ./app:/app  #
+      - ./app/DigiCertGlobalRootCA.crt.pem:/etc/mysql-ssl/ca-cert.pem

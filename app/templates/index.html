@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Home {% endblock %}</title>
+    <link
+      href="{{url_for('static',filename='css/output.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans bg-slate-100 text-gray-800">
+    <div class="w-full">
+      {% block navbar %}
+
+      <div class="bg-gray-800 w-full">
+        <div
+          class="container mx-auto flex w-full flex-row items-center justify-between"
+        >
+          <h3 class="text-4xl text-italic font-bold text-blue-500 px-5">
+            MEDIC
+          </h3>
+          <nav class="flex w-[50%] items-center justify-between py-8">
+            <a href="{{ '/' }}" class="text-white hover:underline">Home</a>
+            <a href="{{ 'aboutus' }}" class="text-white hover:underline"
+              >About</a
+            >
+            <a href="{{ 'services' }}" class="text-white hover:underline"
+              >Services</a
+            >
+            <a href="{{ 'contactUs' }}" class="text-white hover:underline"
+              >Contact us</a
+            >
+          </nav>
+          <button
+            class="bg-white text-gray-800 border border-gray-300 rounded-md px-5 flex items-center hover:bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+          >
+            <a
+              class="flex flex-row w-max items-center gap-1"
+              href="{{'login'}}"
+            >
+              <img
+                src="{{url_for('static', filename='images/goggle-icon.jpg')}}"
+                alt="Google Icon"
+                class="py-2 px-1"
+                width="20"
+                height="20"
+              />
+              Login with Google</a
+            >
+          </button>
+        </div>
+      </div>
+
+      {% endblock %} {% with messages =
+      get_flashed_messages(with_categories=true) %} {% if messages %}
+      <div
+        class="fixed inset-x-0 bottom-0 z-50 flex justify-center items-end space-x-4 p-4"
+      >
+        {% for category, message in messages %}
+        <div
+          class="flex-grow max-w-md bg-white border rounded-md shadow-md px-4 py-2 mb-4"
+        >
+          <div class="flex justify-between items-center">
+            <div class="font-bold">{{ message }}</div>
+            <button
+              {#
+              onclick="this.parentNode.remove()"
+              #}
+              onclick="this.closest('.fixed').remove()"
+              class="text-lg text-gray-500 hover:text-gray-700 focus:outline-none"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+
+      <main class="container mx-auto p-8 h-screen">
+        {% block content %}
+        <div class="w-full flex">
+          <div class="flex flex-col w-[60%] p-2">
+            <p class="font-bold uppercase mt-32 text-lg">
+              ____<span class="text-blue-500">Welcome to MEDIC</span>
+            </p>
+            <h1 class="font-bold uppercase mt-20 text-4xl text-black">
+              BETTER CARE FOR YOUR GENERAL
+            </h1>
+            <h1 class="font-bold uppercase mt-4 text-4xl text-blue-500">
+              HEALTH
+            </h1>
+            <div class="flex flex-col gap-8 justify-start items-center mt-28">
+              <p class="text-2xl">
+                Login to Medic to view/track your medication
+              </p>
+              <button
+                class="bg-white text-gray-800 border border-gray-300 rounded-md px-5 flex items-center hover:bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+              >
+                <a class="flex flex-row w-max items-center" href="{{'login'}}">
+                  <img
+                    src="{{url_for('static', filename='images/goggle-icon.jpg')}}"
+                    alt="Google Icon"
+                    class="mr-2 py-2"
+                    width="40"
+                    height="40"
+                  />
+                  Login with Google</a
+                >
+              </button>
+            </div>
+            <p class="text-lg capitalize mt-28">
+              Embracing good health isn't just a choice;<br />
+              It's an investment in a vibrant and fulfilling life, where
+              well-being becomes the cornerstone of every joy and accomplishment
+              <span class="text-blue-500">~Dr woo</span>
+            </p>
+          </div>
+          <div class="flex flex-col items-center justify-center w-[40%] p-2">
+            <img
+              class="mix-blend-multiply"
+              src="{{url_for('static', filename='images/prescriptionrx.jpg')}}"
+            />
+          </div>
+        </div>
+
+        {% endblock %}
+      </main>
+    </div>
+    <footer class="bg-gray-800 p-4 text-white text-center">
+      <p>&copy; 2023 Medic by Mann All rights reserved.</p>
+    </footer>
+  </body>
+</html>
