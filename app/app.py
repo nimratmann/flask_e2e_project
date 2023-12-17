@@ -77,7 +77,7 @@ client_secrets_file = os.path.join(pathlib.Path(__file__).parent,"client_secret.
 flow = Flow.from_client_secrets_file(
     client_secrets_file,
     scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email", "openid", "https://www.googleapis.com/auth/user.gender.read", "https://www.googleapis.com/auth/user.birthday.read"],
-    redirect_uri='http://localhost:5000/callback'  # Replace with your redirect URI
+    redirect_uri= 'https://5000-cs-60048718044-default.cs-us-east1-pkhd.cloudshell.dev/callback'  
 )
 
 def login_is_required(function):
