@@ -68,7 +68,7 @@ except Exception as e:
 
 
 app.secret_key="THISISASECRET"
-#temporary disable hhtps check
+# Temporary disable hhtps check
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 # OAuth
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent,"client_secret.json")
@@ -240,7 +240,7 @@ def delete_prescription(prescription_id):
     db.session.delete(prescription)
     db.session.commit()
 
-    # Redirect to the main page or wherever you want after deletion
+    # Redirect to the main page 
     return redirect('/prescription')
 
 

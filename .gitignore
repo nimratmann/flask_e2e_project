@@ -1,3 +1,8 @@
+.env
+
+# python virtual environment 
+/my_env
+
 # dependencies
 /node_modules
 
@@ -5,6 +10,7 @@
 /app/DigiCertGlobalRootCA.crt.pem
 /app/client_secret.json
 
-#env file
-.env
+
+
+
 
