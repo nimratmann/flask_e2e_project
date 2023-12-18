@@ -1,8 +1,7 @@
 # flask_e2e_project
 
-This is a full-stack medication tracker application built with Python (Flask) for the backend and Tailwind CSS for the frontend. The inspiration behind this application is to address the issue of individuals forgetting to complete their prescribed medication dosages.
-
-The Medication Tracker provides users with real-time visibility into their prescription progress and allows them to track details about the prescribing doctoras well
+This is a full-stack medication tracker application built with Python (Flask) for the backend and Tailwind CSS for the front end. The purpose of this medication tracker is to systematically monitor and manage an individual's medication regimen, ensuring adherence and providing a comprehensive record of medication history.
+Medic is a medication tracker that provides users with real-time visibility into tracking medication names, dosage, instructions, and prescribing providers. 
 
 ## Structure of Repo
 1. app folder: Includes the scripts for the Flask web application developed for the project (app.py. templates) as well as a static folder with the front-end styling and images (icons, logo).
@@ -99,3 +98,5 @@ Clone the repository to your local machine:
 6. To launch the azure web application, insert the command'''az webapp up --name-insert resource group here-flask --runtime PYTHON:3.9 --sku B1." You have to insert a preferred "name" and "resource group" name you created in your Azure account.
 7. The terminal will then say that the webapp does not exist, and it will create the resource group and start the zip deployment process. (This process takes a few minutes)
 8. You can now login into your Azure account and view your running wbepage URL under "App Services"
+
+Welcome to my Medic Application: medicationtracker.azurewebsites.net 
