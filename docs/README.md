@@ -39,37 +39,39 @@ This organized structure allowed for easy management and secure storage of sensi
 
 ## Running the Application Locally
 
-### 1. Clone the Repository
+#### 1. Clone the Repository
 
 Clone the repository to your local machine:
 
-### 2. Install and configure tailwind
+#### 2. Install and configure tailwind
 
-#### Run the following commands to set up Tailwind CSS:
-1. ```npm init -y``` to create a package.json file
-2. ```npm i tailwindcss``` to install tailwind
-3. ```npx tailwindcss init``` to initialize tailwind
-4. Change the content section of the file so that the final tailwind.config.js looks something like this:
-- content: ``` ["./app/templates/.html", "./app/static/src/.js"]```
+##### Run the following commands to set up Tailwind CSS:
+a. ```npm init -y``` to create a package.json file
 
-5. Create an "input.css" file inside the css folder, located within the static folder, and add the following:
+b. ```npm i tailwindcss``` to install tailwind
+
+c. ```npx tailwindcss init``` to initialize tailwind
+
+d. Change the content section of the file so that the final tailwind.config.js looks something like this:  ``` ["./app/templates/.html", "./app/static/src/.js"]```
+
+e. Create an "input.css" file inside the css folder, located within the static folder, and add the following:
 
     - @tailwind base;
     - @tailwind components;
     - @tailwind utilities;
 
-6. Create an alias in the package.json to track changes in your styles and automatically update the output file.
+f. Create an alias in the package.json to track changes in your styles and automatically update the output file.
 
    ``` "buildcss": "npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch" ```
 
-### 3. Install flask packages
+#### 3. Install flask packages
 - Run ```pip install -r requirements.txt```
 
-### 4. Setup the Environmental variables
+#### 4. Setup the Environmental variables
 
-### 5. Run "env\scripts\activate" to activate your environmental variables
+#### 5. Run "env\scripts\activate" to activate your environmental variables
 
-### 6. Run "python app.py" to start the project.
+#### 6. Run "python app.py" to start the project.
 
 
 ## Deploying using Docker and Docker Compose
